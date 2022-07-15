@@ -210,6 +210,7 @@ viewer.render(canvas.context);
 // button click event
 canvas.on('Button:click', e => {
   if (e.target.disabled) return;
+  canvas.embeds.forEach(object => object.disabled = false);
   e.target.disabled = true;
   e.target.render(canvas.context);
   viewer.download(e.target.id)
